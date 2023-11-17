@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Abdullahalsazib.github.io/react-js-deploy",
+  "homepage": "http://Abdullahalsazib.github.io/react-js-deploy",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
