@@ -4,7 +4,7 @@ import Home from "./Components/Pages/Home";
 import Blog from "./Components/Pages/Blog";
 import About from "./Components/Pages/About";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route,
   Routes,
   HashRouter,
