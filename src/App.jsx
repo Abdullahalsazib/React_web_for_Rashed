@@ -4,12 +4,13 @@ import Home from "./Components/Pages/Home";
 import Blog from "./Components/Pages/Blog";
 import About from "./Components/Pages/About";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
   BrowserRouter,
   Link,
   Outlet,
+  HashRouter,
 } from "react-router-dom";
 import Navbar from "./Components/Pages/Navbar";
 import Join from "./Components/Pages/Join";
@@ -26,7 +27,7 @@ function App() {
       ></motion.div> */}
   
       <Navbar />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -34,7 +35,7 @@ function App() {
           <Route path="/join" element={<Join />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
