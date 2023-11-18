@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { Link, Menu, MenuIcon, MoonStar, SunMedium } from "lucide-react";
 import React, { useEffect, useState } from "react";
 const MenuList = [
   { menuTitle: "Home", menuLink: "/" },
-  { menuTitle: " Blog", menuLink: "/blog" },
   { menuTitle: "About", menuLink: "/about" },
-  { menuTitle: "Contact Us", menuLink: "/contact" },
+  { menuTitle: " Blog", menuLink: "/blog" },
+  { menuTitle: "Contact", menuLink: "/contact" },
 ];
 function Navbar() {
   const [theme, setTheme] = useState(null);
@@ -26,63 +27,73 @@ function Navbar() {
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
+  const [open, setOpen] = useState(false);
+  console.log(open)
   return (
-    <div className=" relative px-[10%] dark:shadow-black shadow-md shadow-blue-100   w-full dark:bg-slate-900  bg-transparent text-white py-4  flex items-center justify-between">
-      <a
-        href="/"
-        className=" text-slate-900 dark:text-white font-bold text-[23px]"
-      >
-        Logo
+    <div className=" relative px-5 lg:px-[10%] dark:shadow-black shadow-md shadow-blue-100   w-full dark:bg-slate-900  bg-transparent text-white py-4  flex items-center justify-between">
+      <a href="/" className=" text-slate-900 dark:text-white font-bold ">
+        {theme === "dark" ? (
+          <img
+            className=" w-[15%]"
+            src="./src/assets/LOGO/LightLogo.svg"
+            alt=""
+          />
+        ) : (
+          <img
+            className=" w-[15%]"
+            src="./src/assets/LOGO/DarkLogo.svg"
+            alt=""
+          />
+        )}
       </a>
-      <div className=" flex items-center space-x-10">
-        <ul className=" capitalize space-x-5 font-bold text-[19px] flex items-center justify-center">
+
+      <div className="flex items-center space-x-10">
+        <ul
+          className={`capitalize lg:space-y-0 space-y-0 lg:space-x-5 font-bold text-[19px] lg:flex items-center justify-center`}
+        >
           {MenuList.map((items, index) => (
-            <motion.li
-              key={index}
-              whileTap={{
-                scale: 2,
-                transition: { duration: 0.5 },
-              }}
-            >
+            <li key={index}>  
               <a
                 className={`py-2 px-5 focus:text-black  text-slate-400`}
                 href={items.menuLink}
               >
                 {items.menuTitle}
               </a>
-            </motion.li>
+            </li>
           ))}
+          <a
+            href="./src/assets/resume.pdf"
+            download
+            className=" bg-[#ff5503] py-1 px-4 text-[18px] uppercase rounded-lg font-Roboto font-[500] dark:bg-transparent dark:border-[3px] dark:border-[#ff5503] border-[3px] border-white hover:bg-transparent hover:text-black dark:hover:bg-[#ff5503] dark:hover:border-transparent flex items-center space-x-3"
+          >
+            <p>resume</p>
+            <Link size="18"  className=""/>
+          </a>
         </ul>
+
         <div
-          className={`  px-1 w-[65px] py-1 rounded-full flex items-center  ${
-            theme === "light"
-              ? "justify-end bg-slate-900 border-[2px] border-black"
-              : "justify-start bg-white border-[2px] border-black"
-          } `}
+          className={`  px-2 w-[65px]  py-1 rounded-full flex items-center ${
+            theme === "dark"
+              ? "justify-end bg-slate-400"
+              : "justify-start bg-slate-900"
+          }`}
           onClick={handleThemeSwitch}
         >
-          <motion.div
-            animate={{
-              transition: { duration: 2 },
-            }}
-            className={` w-[20px] h-[20px]  rounded-full ${
-              theme === "dark" ? "bg-black" : "bg-white"
-            }`}
-          ></motion.div>
+          {theme === "dark" ? (
+            <SunMedium className=" text-black" />
+          ) : (
+            <MoonStar className=" text-white" />
+          )}
         </div>
-        {/* <motion.a
-          whileTap={{
-            scale: 2,
-            transition: { duration: 0.5 },
-          }}
-          href="/join"
-          className=" ring-[3px] ring-blue-500 hover:bg-sky-500 duration-200 hover:ring-sky-500 hover:text-black bg-blue-500 py-2 px-5 uppercase rounded-md text-white font-semibold"
-        >
-          join now
-        </motion.a> */}
+        <div className=" lg:hidden block" onClick={() => setOpen(!open)}>
+          <Menu
+            size={40}
+            className=" dark:text-white text-black block "
+          />
+        </div>
       </div>
 
-      <div className="left-0 w-[100%] top-0 h-[6px]  absolute ">
+      <div className="left-0 w-[100%] top-0 h-[6px] flex items-center  absolute ">
         <motion.div
           initial={{
             x: 2000,
@@ -95,7 +106,35 @@ function Navbar() {
           transition={{
             duration: 3,
           }}
-          className=" w-[250px] h-[6px] bg-red-500 rounded-full"
+          className=" w-[150px] h-[6px] bg-red-500 rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{
+            x: 2000,
+            opacity: 5,
+          }}
+          animate={{
+            x: -300,
+            opacity: 0.2,
+          }}
+          transition={{
+            duration: 3,
+          }}
+          className=" w-[150px] h-[6px] bg-white rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{
+            x: 2000,
+            opacity: 5,
+          }}
+          animate={{
+            x: -600,
+            opacity: 0.2,
+          }}
+          transition={{
+            duration: 3,
+          }}
+          className=" w-[150px] h-[6px] bg-green-500 rounded-full"
         ></motion.div>
       </div>
     </div>

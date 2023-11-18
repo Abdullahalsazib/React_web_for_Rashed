@@ -8,6 +8,10 @@ export default {
   ],
   darkMode: "class",
   theme: {
+    fontFamily: {
+      Roboto: ["'Roboto', sans-serif"],
+      Poppins: ["'Poppins', sans-serif"],
+    },
     extend: {},
   },
   plugins: [],
