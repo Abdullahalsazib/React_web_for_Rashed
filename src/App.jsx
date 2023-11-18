@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  HashRouter,
 } from "react-router-dom";
 import Navbar from "./Components/Pages/Navbar";
 import Join from "./Components/Pages/Join";
