@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 const MenuList = [
-  { menuTitle: "🏠Home", menuLink: "/" },
-  { menuTitle: " 📖Blog", menuLink: "/blog" },
-  { menuTitle: " 💁‍♂️About", menuLink: "/about" },
+  { menuTitle: "Home", menuLink: "/" },
+  { menuTitle: " Blog", menuLink: "/blog" },
+  { menuTitle: "About", menuLink: "/about" },
+  { menuTitle: "Contact Us", menuLink: "/contact" },
 ];
 function Navbar() {
   const [theme, setTheme] = useState(null);
-  useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  //     setTheme("dark");
+  //   } else {
+  //     setTheme("light");
+  //   }
+  // }, []);
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -26,8 +27,11 @@ function Navbar() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
-    <div className=" px-[10%] dark:shadow-black shadow-md shadow-blue-100  relative w-full dark:bg-slate-900  bg-white text-white py-4  flex items-center justify-between">
-      <a href="/" className=" text-slate-900 dark:text-white font-bold text-[23px]">
+    <div className=" relative px-[10%] dark:shadow-black shadow-md shadow-blue-100   w-full dark:bg-slate-900  bg-transparent text-white py-4  flex items-center justify-between">
+      <a
+        href="/"
+        className=" text-slate-900 dark:text-white font-bold text-[23px]"
+      >
         Logo
       </a>
       <div className=" flex items-center space-x-10">
@@ -50,14 +54,23 @@ function Navbar() {
           ))}
         </ul>
         <div
-          className={`  px-1 w-[65px] py-1 rounded-full flex items-center  ${theme === "light" ? 'justify-end bg-slate-900 border-[2px] border-black': "justify-start bg-white border-[2px] border-black"} `}
+          className={`  px-1 w-[65px] py-1 rounded-full flex items-center  ${
+            theme === "light"
+              ? "justify-end bg-slate-900 border-[2px] border-black"
+              : "justify-start bg-white border-[2px] border-black"
+          } `}
           onClick={handleThemeSwitch}
         >
-          <motion.div animate={{
-            transition: {duration: 2}
-          }} className={` w-[20px] h-[20px]  rounded-full ${theme === "dark"? "bg-black": "bg-white"}`}></motion.div>
+          <motion.div
+            animate={{
+              transition: { duration: 2 },
+            }}
+            className={` w-[20px] h-[20px]  rounded-full ${
+              theme === "dark" ? "bg-black" : "bg-white"
+            }`}
+          ></motion.div>
         </div>
-        <motion.a
+        {/* <motion.a
           whileTap={{
             scale: 2,
             transition: { duration: 0.5 },
@@ -66,7 +79,7 @@ function Navbar() {
           className=" ring-[3px] ring-blue-500 hover:bg-sky-500 duration-200 hover:ring-sky-500 hover:text-black bg-blue-500 py-2 px-5 uppercase rounded-md text-white font-semibold"
         >
           join now
-        </motion.a>
+        </motion.a> */}
       </div>
 
       <div className="left-0 w-[100%] top-0 h-[6px]  absolute ">
