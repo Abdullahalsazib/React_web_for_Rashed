@@ -28,7 +28,7 @@ function Navbar() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   const [open, setOpen] = useState(false);
-  console.log(open)
+  console.log(open);
   return (
     <div className=" relative px-5 lg:px-[10%] dark:shadow-black shadow-md shadow-blue-100   w-full dark:bg-slate-900  bg-transparent text-white py-4  flex items-center justify-between">
       <a href="/" className=" text-slate-900 dark:text-white font-bold ">
@@ -49,10 +49,10 @@ function Navbar() {
 
       <div className="flex items-center space-x-10">
         <ul
-          className={`capitalize lg:space-y-0 space-y-0 lg:space-x-5 font-bold text-[19px] lg:flex items-center justify-center`}
+          className={`capitalize space-x-5 font-bold text-[19px] flex items-center justify-center`}
         >
           {MenuList.map((items, index) => (
-            <li key={index}>  
+            <li key={index}>
               <a
                 className={`py-2 px-5 focus:text-black  text-slate-400`}
                 href={items.menuLink}
@@ -67,7 +67,7 @@ function Navbar() {
             className=" bg-[#ff5503] py-1 px-4 text-[18px] uppercase rounded-lg font-Roboto font-[500] dark:bg-transparent dark:border-[3px] dark:border-[#ff5503] border-[3px] border-white hover:bg-transparent hover:text-black dark:hover:bg-[#ff5503] dark:hover:border-transparent flex items-center space-x-3"
           >
             <p>resume</p>
-            <Link size="18"  className=""/>
+            <Link size="18" className="" />
           </a>
         </ul>
 
@@ -85,12 +85,12 @@ function Navbar() {
             <MoonStar className=" text-white" />
           )}
         </div>
-        <div className=" lg:hidden block" onClick={() => setOpen(!open)}>
+        {/* <div className=" lg:hidden block" onClick={() => setOpen(!open)}>
           <Menu
             size={40}
             className=" dark:text-white text-black block "
           />
-        </div>
+        </div> */}
       </div>
 
       <div className="left-0 w-[100%] top-0 h-[6px] flex items-center  absolute ">
