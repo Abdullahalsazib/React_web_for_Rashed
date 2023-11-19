@@ -11,7 +11,7 @@ import Contact from "./Components/Pages/Contact";
 function App() {
   return (
     <>
-      <div className=" relative bg-slate-25 dark:bg-[url('./src/assets/Dark.svg')] bg-[url('./src/assets/Light.svg')] bg-center bg-cover">
+      <div className=" relative bg-slate-25 dark:bg-[url('./src/assets/dark.svg')] bg-[url('./src/assets/light.svg')] bg-center bg-cover">
         <Navbar />
         <Router>
           <Routes>
@@ -24,7 +24,6 @@ function App() {
           </Routes>
         </Router>
       </div>
-      
     </>
   );
 }

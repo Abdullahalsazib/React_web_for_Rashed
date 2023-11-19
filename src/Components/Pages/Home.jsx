@@ -25,7 +25,6 @@ const SocLink = [
     Icon: Twitter,
     hrerLink: "https://www.facebook.com/abdullahalsazib22",
   },
-  
 ];
 
 function Home() {
@@ -50,7 +49,12 @@ function Home() {
                 className=" rounded-full my-3 p-4 dark:bg-slate-700 dark:hover:bg-[#ff5503] bg-transparent border-[3px] border-black dark:border-white duration-300 hover:bg-[#ff5503] grid grid-flow-col gap-5"
                 href={items.hrerLink}
               >
-                {<items.Icon size="23" className=" dark:text-white text-[black]" />}
+                {
+                  <items.Icon
+                    size="23"
+                    className=" dark:text-white text-[black]"
+                  />
+                }
               </a>
             </li>
           ))}
@@ -123,7 +127,11 @@ function Home() {
         }}
         className=" "
       >
-        <img className=" w-[80% ]" src="./src/assets/Home.svg" alt="" />
+        <img
+          className=" w-[80% ]"
+          src="./src/assets/HomeSvg.svg"
+          alt=""
+        />
       </motion.div>
     </div>
   );
