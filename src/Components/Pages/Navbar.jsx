@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Link, Menu, MenuIcon, MoonStar, SunMedium } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import DLogo from "./PNG/logoD.png";
+import LLogo from "./PNG/LogoL.png";
+
 const MenuList = [
   { menuTitle: "Home", menuLink: "/" },
   { menuTitle: "About", menuLink: "/about" },
@@ -29,21 +32,14 @@ function Navbar() {
   };
   // const [open, setOpen] = useState(false);
   // console.log(open);
+
   return (
     <div className=" relative px-5 lg:px-[10%] dark:shadow-black shadow-md shadow-blue-100   w-full dark:bg-slate-900  bg-transparent text-white py-4  flex items-center justify-between">
       <a href="/" className=" text-slate-900 dark:text-white font-bold ">
         {theme === "dark" ? (
-          <img
-            className=" w-[15%]"
-            src="./src/Components/Pages/Img/LOGO/LightLogo.svg"
-            alt=""
-          />
+          <img className=" w-[15%]" src={LLogo} alt="" />
         ) : (
-          <img
-            className=" w-[15%]"
-            src="./src/Components/Pages/Img/LOGO/DarkLogo.svg"
-            alt=""
-          />
+          <img className=" w-[15%]" src={DLogo} alt="" />
         )}
       </a>
 

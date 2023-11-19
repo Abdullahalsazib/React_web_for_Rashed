@@ -7,11 +7,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Pages/Navbar";
 import Join from "./Components/Pages/Join";
 import Contact from "./Components/Pages/Contact";
-
 function App() {
   return (
     <>
-      <div className=" dark:bg-[url('./src/Components/Pages/Img/dark.svg')] bg-[url('./src/Components/Pages/Img/light.svg')] bg-center bg-cover">
+      <div
+        className={` bg-[url('./Components/Pages/PNG/light.png')] dark:bg-[url('./Components/Pages/PNG/dark.png')] bg-center bg-cover w-full h-screen`}
+      >
         <Navbar />
         <Router>
           <Routes>

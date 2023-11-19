@@ -125,7 +125,7 @@ function Home() {
         transition={{
           duration: 0.9,
         }}
-        className=" "
+        className=""
       >
         <img
           className=" w-[80% ]"
