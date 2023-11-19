@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaUserShield } from "react-icons/fa";
 import React from "react";
+import Rashedimg from "./PNG/RashedImg.png";
 import {
   Facebook,
   GitBranch,
@@ -127,11 +128,12 @@ function Home() {
         }}
         className=""
       >
-        <img
-          className=" w-[80% ]"
-          src="./src/Components/Pages/Img/HomeSvg.svg"
-          alt=""
-        />
+        <div className={`relative bg-[#ff5503] rounded-full p-2  w-[550px] h-[550px]`}>
+          <img className=" w-[100%]" src={Rashedimg} alt="" />
+          <div className=" absolute top-10 right-[90px] animate-bounce w-[50px] h-[50px] bg-green-400 rounded-full">
+
+          </div>
+        </div>
       </motion.div>
     </div>
   );
