@@ -129,7 +129,7 @@ function Home() {
       >
         <img
           className=" w-[80% ]"
-          src="./src/assets/HomeSvg.svg"
+          src="./src/Components/Pages/Img/HomeSvg.svg"
           alt=""
         />
       </motion.div>

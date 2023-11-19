@@ -9,13 +9,13 @@ const MenuList = [
 ];
 function Navbar() {
   const [theme, setTheme] = useState(null);
-  // useEffect(() => {
-  //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  //     setTheme("dark");
-  //   } else {
-  //     setTheme("light");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }, []);
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -35,13 +35,13 @@ function Navbar() {
         {theme === "dark" ? (
           <img
             className=" w-[15%]"
-            src="./src/assets/LOGO/LightLogo.svg"
+            src="./src/Components/Pages/Img/LOGO/LightLogo.svg"
             alt=""
           />
         ) : (
           <img
             className=" w-[15%]"
-            src="./src/assets/LOGO/DarkLogo.svg"
+            src="./src/Components/Pages/Img/LOGO/DarkLogo.svg"
             alt=""
           />
         )}
